@@ -2,10 +2,10 @@
  * CoffeeOrder class allows step-by-step construction of custom coffee using the Builder pattern.
  */
 class CoffeeOrder {
-    private final String type;
-    private final String milk;
-    private final String syrup;
-    private final String size;
+    private String type;
+    private String milk;
+    private String syrup;
+    private String size;
 
     private CoffeeOrder(Builder builder) {
         this.type = builder.type;

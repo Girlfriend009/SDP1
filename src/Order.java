@@ -2,8 +2,8 @@
  * Order class that implements Cloneable to allow order duplication (Prototype pattern).
  */
 class Order implements Cloneable {
-    private final String coffeeType;
-    private final String size;
+    private String coffeeType;
+    private String size;
 
     public Order(String coffeeType, String size) {
         this.coffeeType = coffeeType;
