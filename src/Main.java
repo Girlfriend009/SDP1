@@ -1,12 +1,12 @@
 /**
- * Main class demonstrating the use of creational design patterns in a coffee shop simulation.
+ * Main, демонстрирующий использование порождающих паттернов в симуляции кофейни.
  */
 public class Main {
     public static void main(String[] args) {
-        // Singleton pattern: Only one instance of CoffeeShop is created
+        // Паттерн Singleton: создаем единственный экземпляр CoffeeShop
         CoffeeShop shop = CoffeeShop.getInstance();
 
-        // Factory Method pattern: Creating different types of coffee
+        // Паттерн Factory Method: создаем разные типы кофе
         CoffeeFactory espressoFactory = new EspressoFactory();
         Coffee espresso = espressoFactory.createCoffee();
         espresso.prepare();
@@ -15,28 +15,28 @@ public class Main {
         Coffee cappuccino = cappuccinoFactory.createCoffee();
         cappuccino.prepare();
 
-        // Abstract Factory pattern: Creating ingredients for a latte
+        // Паттерн Abstract Factory: создаем ингредиенты для латте
         CoffeeIngredientFactory ingredientFactory = new LatteIngredientFactory();
         Milk milk = ingredientFactory.createMilk();
         Syrup syrup = ingredientFactory.createSyrup();
         milk.addMilk();
         syrup.addSyrup();
 
-        // Prototype pattern: Cloning an order
-        Order order1 = new Order("Cappuccino", "Large");
+        // Паттерн Prototype: клонируем заказ
+        Order order1 = new Order("Капучино", "Большой");
         Order order2 = order1.clone();
-        System.out.println("Cloned order: " + order2);
+        System.out.println("Клонированный заказ: " + order2);
 
-        // Builder pattern: Building a custom coffee order
+        // Паттерн Builder: создаем кастомный заказ на кофе
         CoffeeOrder customCoffee = new CoffeeOrder.Builder()
-                .setType("Latte")
-                .setMilk("Soy Milk")
-                .setSyrup("Vanilla")
-                .setSize("Medium")
+                .setType("Латте")
+                .setMilk("Соевое молоко")
+                .setSyrup("Ванильный сироп")
+                .setSize("Средний")
                 .build();
         System.out.println(customCoffee);
 
-        // Placing orders in the coffee shop
+        // Оформляем заказы в кофейне
         shop.placeOrder(order1);
     }
 }

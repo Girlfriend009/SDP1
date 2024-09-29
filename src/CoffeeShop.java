@@ -1,15 +1,15 @@
 /**
- * CoffeeShop class ensures only one instance of the coffee shop is created (Singleton pattern).
- * This class manages orders in the coffee shop.
+ * Класс CoffeeShop гарантирует создание только одного экземпляра кофейни (паттерн Singleton).
+ * Этот класс управляет заказами в кофейне.
  */
 public class CoffeeShop {
     private static CoffeeShop instance;
 
-    // Private constructor to restrict instantiation from outside the class
+    // Приватный конструктор, чтобы предотвратить создание новых объектов вне класса
     private CoffeeShop() {
     }
 
-    // Method to get the single instance of CoffeeShop (Singleton)
+    // Метод для получения единственного экземпляра CoffeeShop (Singleton)
     public static CoffeeShop getInstance() {
         if (instance == null) {
             instance = new CoffeeShop();
@@ -17,8 +17,8 @@ public class CoffeeShop {
         return instance;
     }
 
-    // Method to place an order in the coffee shop
+    // Метод для оформления заказа в кофейне
     public void placeOrder(Order order) {
-        System.out.println("Order placed: " + order);
+        System.out.println("Заказ принят: " + order);
     }
 }

@@ -1,39 +1,39 @@
 /**
- * Base Coffee class that provides the basic structure for different types of coffee.
+ * Базовый класс Coffee, представляющий общий вид кофе.
  */
 abstract class Coffee {
     public abstract void prepare();
 }
 
 /**
- * Espresso class that extends Coffee and implements specific preparation.
+ * Класс Espresso, представляющий конкретный вид кофе — эспрессо.
  */
 class Espresso extends Coffee {
     @Override
     public void prepare() {
-        System.out.println("Preparing an espresso.");
+        System.out.println("Готовим эспрессо.");
     }
 }
 
 /**
- * Cappuccino class that extends Coffee and implements specific preparation.
+ * Класс Cappuccino, представляющий конкретный вид кофе — капучино.
  */
 class Cappuccino extends Coffee {
     @Override
     public void prepare() {
-        System.out.println("Preparing a cappuccino.");
+        System.out.println("Готовим капучино.");
     }
 }
 
 /**
- * Abstract CoffeeFactory that defines a method for creating coffee.
+ * Абстрактный класс CoffeeFactory, определяющий метод для создания кофе.
  */
 abstract class CoffeeFactory {
     public abstract Coffee createCoffee();
 }
 
 /**
- * EspressoFactory creates instances of Espresso coffee.
+ * Класс EspressoFactory для создания объектов эспрессо.
  */
 class EspressoFactory extends CoffeeFactory {
     @Override
@@ -43,7 +43,7 @@ class EspressoFactory extends CoffeeFactory {
 }
 
 /**
- * CappuccinoFactory creates instances of Cappuccino coffee.
+ * Класс CappuccinoFactory для создания объектов капучино.
  */
 class CappuccinoFactory extends CoffeeFactory {
     @Override

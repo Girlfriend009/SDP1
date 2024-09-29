@@ -1,5 +1,5 @@
 /**
- * Order class that implements Cloneable to allow order duplication (Prototype pattern).
+ * Класс Order реализует интерфейс Cloneable, чтобы можно было копировать заказы (паттерн Прототип).
  */
 class Order implements Cloneable {
     private String coffeeType;
@@ -10,19 +10,19 @@ class Order implements Cloneable {
         this.size = size;
     }
 
-    // Overriding clone() to support copying orders
+    // Переопределяем метод clone() для поддержки клонирования заказов
     @Override
     public Order clone() {
         try {
             return (Order) super.clone();
         } catch (CloneNotSupportedException e) {
-            System.err.println("Cloning not supported for this object.");
+            System.err.println("Ошибка при клонировании заказа.");
             return null;
         }
     }
 
     @Override
     public String toString() {
-        return "Order{" + "coffeeType='" + coffeeType + '\'' + ", size='" + size + '\'' + '}';
+        return "Заказ{" + "тип кофе='" + coffeeType + '\'' + ", размер='" + size + '\'' + '}';
     }
 }

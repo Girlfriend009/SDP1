@@ -1,49 +1,49 @@
 /**
- * Milk interface defines a method for adding milk to coffee.
+ * Интерфейс Milk определяет метод для добавления молока в кофе.
  */
 interface Milk {
     void addMilk();
 }
 
 /**
- * SoyMilk class that adds soy milk to coffee.
+ * Класс SoyMilk для добавления соевого молока в кофе.
  */
 class SoyMilk implements Milk {
     @Override
     public void addMilk() {
-        System.out.println("Adding soy milk.");
+        System.out.println("Добавляем соевое молоко.");
     }
 }
 
 /**
- * RegularMilk class that adds regular milk to coffee.
+ * Класс RegularMilk для добавления обычного молока в кофе.
  */
 class RegularMilk implements Milk {
     @Override
     public void addMilk() {
-        System.out.println("Adding regular milk.");
+        System.out.println("Добавляем обычное молоко.");
     }
 }
 
 /**
- * Syrup interface defines a method for adding syrup to coffee.
+ * Интерфейс Syrup определяет метод для добавления сиропа в кофе.
  */
 interface Syrup {
     void addSyrup();
 }
 
 /**
- * VanillaSyrup class that adds vanilla syrup to coffee.
+ * Класс VanillaSyrup для добавления ванильного сиропа в кофе.
  */
 class VanillaSyrup implements Syrup {
     @Override
     public void addSyrup() {
-        System.out.println("Adding vanilla syrup.");
+        System.out.println("Добавляем ванильный сироп.");
     }
 }
 
 /**
- * Abstract CoffeeIngredientFactory defines methods for creating milk and syrup.
+ * Абстрактный интерфейс CoffeeIngredientFactory для создания молока и сиропа.
  */
 interface CoffeeIngredientFactory {
     Milk createMilk();
@@ -51,7 +51,7 @@ interface CoffeeIngredientFactory {
 }
 
 /**
- * LatteIngredientFactory creates specific milk and syrup for latte.
+ * Класс LatteIngredientFactory создает молоко и сироп для латте.
  */
 class LatteIngredientFactory implements CoffeeIngredientFactory {
     @Override

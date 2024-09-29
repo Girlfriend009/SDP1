@@ -1,5 +1,5 @@
 /**
- * CoffeeOrder class allows step-by-step construction of custom coffee using the Builder pattern.
+ * Класс CoffeeOrder позволяет пошагово создавать кастомные заказы на кофе (паттерн Строитель).
  */
 class CoffeeOrder {
     private String type;
@@ -14,38 +14,38 @@ class CoffeeOrder {
         this.size = builder.size;
     }
 
-    // Builder class to construct CoffeeOrder objects
+    // Вложенный класс Builder для создания объекта CoffeeOrder
     public static class Builder {
         private String type;
         private String milk;
         private String syrup;
         private String size;
 
-        // Setting the coffee type
+        // Метод для задания типа кофе
         public Builder setType(String type) {
             this.type = type;
             return this;
         }
 
-        // Setting the milk type
+        // Метод для задания типа молока
         public Builder setMilk(String milk) {
             this.milk = milk;
             return this;
         }
 
-        // Setting the syrup type
+        // Метод для задания типа сиропа
         public Builder setSyrup(String syrup) {
             this.syrup = syrup;
             return this;
         }
 
-        // Setting the size of the coffee
+        // Метод для задания размера кофе
         public Builder setSize(String size) {
             this.size = size;
             return this;
         }
 
-        // Final build method to return the constructed CoffeeOrder object
+        // Метод для создания объекта CoffeeOrder
         public CoffeeOrder build() {
             return new CoffeeOrder(this);
         }
@@ -53,6 +53,6 @@ class CoffeeOrder {
 
     @Override
     public String toString() {
-        return "CoffeeOrder{" + "type='" + type + '\'' + ", milk='" + milk + '\'' + ", syrup='" + syrup + '\'' + ", size='" + size + '\'' + '}';
+        return "Заказ на кофе{" + "тип='" + type + '\'' + ", молоко='" + milk + '\'' + ", сироп='" + syrup + '\'' + ", размер='" + size + '\'' + '}';
     }
 }
